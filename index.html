@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação Premium</title>
+    <style>
+        :root {
+            --primary-pink: #E91E63;
+            --light-pink: #FCE4EC;
+            --dark-pink: #C2185B;
+            --text-color: #444;
+            --bg-color: #fafafa;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.1);
+            width: 100%;
+            max-width: 600px;
+            border-top: 12px solid var(--primary-pink);
+        }
+
+        h2 { color: var(--dark-pink); text-align: center; margin-bottom: 10px; }
+        p.subtitle { text-align: center; color: #777; margin-bottom: 30px; font-size: 0.9rem; }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--primary-pink);
+            margin: 25px 0 15px;
+            border-bottom: 1px solid var(--light-pink);
+            padding-bottom: 5px;
+        }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
+
+        input[type="text"], input[type="email"], input[type="date"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-pink);
+            background-color: var(--light-pink);
+        }
+
+        /* Estilização para Escala de Satisfação (Radio Buttons) */
+        .rating-group {
+            display: flex;
+            justify-content: space-between;
+            background: var(--light-pink);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .rating-option {
+            text-align: center;
+            flex: 1;
+        }
+
+        .rating-option input { margin-bottom: 5px; cursor: pointer; accent-color: var(--primary-pink); }
+
+        button {
+            width: 100%;
+            background-color: var(--primary-pink);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover { background-color: var(--dark-pink); transform: translateY(-2px); }
+
+        textarea { resize: vertical; min-height: 100px; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Pesquisa de Satisfação</h2>
+    <p class="subtitle">Sua opinião nos ajuda a evoluir!</p>
+    
+    <form id="fullSurvey">
+        <div class="section-title">Dados de Contato</div>
+        <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Ex: Maria Silva" required>
+        </div>
+        <div class="form-group">
+            <label>E-mail</label>
+            <input type="email" placeholder="contato@exemplo.com" required>
+        </div>
+        <div class="form-group">
+            <label>Data de Nascimento</label>
+            <input type="date" required>
+        </div>
+
+        <div class="section-title">Sua Experiência</div>
+        
+        <div class="form-group">
+            <label>De 1 a 5, quão satisfeito você está com nosso serviço?</label>
+            <div class="rating-group">
+                <div class="rating-option"><input type="radio" name="sat" value="1" id="s1"><br><label for="s1">1</label></div>
+                <div class="rating-option"><input type="radio" name="sat" value="2" id="s2"><br><label for="s2">2</label></div>
+                <div class="rating-option"><input type="radio" name="sat" value="3" id="s3"><br><label for="s3">3</label></div>
+                <div class="rating-option"><input type="radio" name="sat" value="4" id="s4"><br><label for="s4">4</label></div>
+                <div class="rating-option"><input type="radio" name="sat" value="5" id="s5" checked><br><label for="s5">5</label></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Qual a probabilidade de você nos recomendar a um amigo?</label>
+            <select required>
+                <option value="">Selecione uma opção...</option>
+                <option value="10">Com certeza (10)</option>
+                <option value="5">Talvez (5)</option>
+                <option value="0">Não recomendaria (0)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>O que podemos melhorar?</label>
+            <textarea placeholder="Deixe seu feedback honesto aqui..."></textarea>
+        </div>
+
+        <button type="submit">Enviar Pesquisa</button>
+    </form>
+</div>
+
+</body>
+</html>
